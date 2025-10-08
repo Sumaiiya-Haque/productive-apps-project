@@ -42,8 +42,8 @@ const Navbar = () => {
         </div>
         <div className="flex">
           <img className=" max-w-7" src={logo} alt="" />
-          <Link to="" className="text-2xl font-bold">
-            Productive Apps
+          <Link to="" className="text-2xl font-bold text-purple-600">
+            HERO.IO
           </Link>
         </div>
       </div>

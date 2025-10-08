@@ -3,20 +3,32 @@ import React, { useState } from 'react';
 import downloadImg from "../assets/images/icon-downloads.png";
 import ratingImg from "../assets/images/icon-ratings.png";
 import useApps from '../Hooks/useApps';
+import { SearchIcon } from 'lucide-react';
+
+import AppsNotFound from './AppsNotFound';
+import { NavLink, useNavigate } from 'react-router';
 
 const AllApps = () => {
+
+
+
     
     const {apps}= useApps();
     const [search,setSearch] = useState('');
 
     const term = search.trim().toLocaleLowerCase()
     const searchedApps= term?apps.filter(app=>app.title.toLocaleLowerCase().includes(term)):apps
+
+
+      const navigate = useNavigate();
+
+  if (searchedApps.length === 0) {
+    navigate("/apps-not-found");
+  }
     
      return (
 <>
-
-
-    <div className='bg-gray-100 pb-5'>
+<div className='bg-gray-100 pb-5'>
       <div className="text-center py-5">
         <h1 className="text-3xl font-bold">Our All Applications</h1>
         <p className="text-sm py-3 text-gray-600">
@@ -29,7 +41,7 @@ const AllApps = () => {
     <h1 className='text-xl font-bold '>Apps Found ({searchedApps.length}) </h1>
 {/* ml-5 sm:ml-21 mb-5 */}
     <label className="input">
-  
+  <SearchIcon className='text-gray-400'></SearchIcon> 
   <input 
   value={search}
   onChange={e=>setSearch(e.target.value)} type="search" placeholder="Search Apps" />
@@ -37,7 +49,8 @@ const AllApps = () => {
 
 </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-[1100px] sm:mx-auto mx-5 mb-5">
+     
+         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-[1100px] sm:mx-auto mx-5 mb-5">
         {/* card
          */}
 
@@ -66,10 +79,21 @@ const AllApps = () => {
           </div>
         ))}
       </div>
+       </div>
+{/* {searchedApps.length > 0 ? (
+
     
-    </div>
+     )
+   
+     :(
+    //  <AppsNotFound></AppsNotFound>
+    )} */}
     </>
   );
 };
 
 export default AllApps;
+
+
+
+
