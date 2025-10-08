@@ -1,5 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router";
+import downloadImg from '../assets/images/icon-downloads.png'
+import ratingImg from '../assets/images/icon-ratings.png'
 
 const TrendingApps = () => {
     const trendingApps = useLoaderData();
@@ -21,17 +23,21 @@ const TrendingApps = () => {
          */}
 {
     trendingApps.map(trendingApp =>
-                <div className="card bg-base-100  shadow-sm">
-  <figure className="max-w-full max-h-52  px-10 pb-4  pt-6">
+                <div className="card bg-white  shadow-sm hover:scale-105 transition ease-in-out max-h-[px]">
+  <figure className="max-w-full   px-10 py-3 bg-pink-100 min-h-52">
     <img
       src={trendingApp.image}
       alt="Shoes" />
   </figure>
   <div className="card-body">
-    <h2 className="card-title">{trendingApp.title}</h2>
+    <h2 className="font-bold text-[20px] !text-center">{trendingApp.title}</h2>
    
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
+    <div className="flex justify-between">
+   <button className="border-gray-300 border px-2 sm:px-4 py-2 flex items-center gap-2 rounded-3xl font-bold">
+  <img className="w-5" src={downloadImg} alt="" />
+  {trendingApp.downloads}
+</button>
+    <button className="border-gray-300 border px-2 sm:px-4 py-2  flex gap-2 items-center rounded-3xl font-bold"><img className="w-5" src={ratingImg} alt="" />{trendingApp.ratingAvg}</button>
     </div>
   </div>
 </div>

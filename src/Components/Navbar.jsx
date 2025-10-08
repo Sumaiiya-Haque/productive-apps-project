@@ -55,7 +55,7 @@ const Navbar = () => {
   className="btn bg-purple-600 text-white flex items-center gap-2 px-4 py-2 rounded-md hover:bg-purple-700 transition"
 >
   <Github
-    className="border bg-white text-purple-600 rounded-full fill-purple-600 p-0.5"
+    className="border bg-white text-purple-600 rounded-full fill-purple-600 pt-1"
     size={25}
   />
   Contribute
