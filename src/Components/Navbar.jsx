@@ -5,8 +5,8 @@ import logo from "../assets/images/logo.png";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100 shadow-sm">
-      <div className="navbar-start">
+    <div className="navbar  shadow-sm  ">
+      <div className="navbar-start ml-0 sm:ml-10">
         <div className="dropdown">
           <div tabIndex={0} role="button" className=" lg:hidden cursor-pointer">
             <svg
@@ -60,7 +60,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end mr-0 sm:mr-10">
         <a
           href="https://github.com/Sumaiiya-Haque"
           target="_blank"
