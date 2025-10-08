@@ -7,6 +7,8 @@ import Installation from "../Pages/Installation";
 import AllApps from "../Pages/AllApps";
 import AppsNotFound from "../Pages/AppsNotFound";
 
+import AppDetails from "../Pages/AppDetails";
+
 
 const router = createBrowserRouter([
     {
@@ -36,7 +38,12 @@ const router = createBrowserRouter([
     path:'/apps-not-found',
     element:<AppsNotFound></AppsNotFound>,
      
-  }
+  },
+  {
+  path: "/app/:id",
+  element: <AppDetails />, 
+  loader: ({ params}) => fetch(`/AppData.json`) 
+}
     ]
   },
 // {

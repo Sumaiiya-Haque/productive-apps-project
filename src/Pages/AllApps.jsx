@@ -6,7 +6,7 @@ import useApps from '../Hooks/useApps';
 import { SearchIcon } from 'lucide-react';
 
 import AppsNotFound from './AppsNotFound';
-import { NavLink, useNavigate } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 
 const AllApps = () => {
 
@@ -55,29 +55,32 @@ const AllApps = () => {
          */}
 
          
-        {searchedApps.map((trendingApp) => (
-          <div className="card bg-white  shadow-sm hover:scale-105 transition ease-in-out max-h-[px]">
-            <figure className="max-w-full   px-10 py-3 bg-pink-100 min-h-52">
-              <img src={trendingApp.image} alt="Shoes" />
-            </figure>
-            <div className="card-body">
-              <h2 className="font-bold text-[20px] !text-center">
-                {trendingApp.title}
-              </h2>
+       {searchedApps.map((trendingApp) => (
+  <Link to={`/app/${trendingApp.id}`} key={trendingApp.id}>
+    <div className="card bg-white shadow-sm hover:scale-105 transition ease-in-out">
+      <figure className="max-w-full px-10 py-3 bg-pink-100 min-h-52">
+        <img src={trendingApp.image} alt={trendingApp.title} />
+      </figure>
+      <div className="card-body">
+        <h2 className="font-bold text-[20px] text-center">
+          {trendingApp.title}
+        </h2>
 
-              <div className="flex justify-between">
-                <button className="border-gray-300 border px-2 sm:px-4 py-2 flex items-center gap-2 rounded-3xl font-bold bg-green-50 text-green-500">
-                  <img className="w-5" src={downloadImg} alt="" />
-                  {trendingApp.downloads}
-                </button>
-                <button className="border-gray-300 border px-2 sm:px-4 py-2  flex gap-2 items-center rounded-3xl font-bold bg-red-50 text-red-400">
-                  <img className="w-5" src={ratingImg} alt="" />
-                  {trendingApp.ratingAvg}
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
+        <div className="flex justify-between">
+          <button className="border-gray-300 border px-2 sm:px-4 py-2 flex items-center gap-2 rounded-3xl font-bold bg-green-50 text-green-500">
+            <img className="w-5" src={downloadImg} alt="" />
+            {trendingApp.downloads}
+          </button>
+          <button className="border-gray-300 border px-2 sm:px-4 py-2 flex gap-2 items-center rounded-3xl font-bold bg-red-50 text-red-400">
+            <img className="w-5" src={ratingImg} alt="" />
+            {trendingApp.ratingAvg}
+          </button>
+        </div>
+      </div>
+    </div>
+  </Link>
+))}
+
       </div>
        </div>
 {/* {searchedApps.length > 0 ? (

@@ -1,16 +1,16 @@
 import React from "react";
-import { NavLink, useLoaderData } from "react-router";
+import { Link, NavLink, useLoaderData } from "react-router";
 import downloadImg from "../assets/images/icon-downloads.png";
 import ratingImg from "../assets/images/icon-ratings.png";
 import useApps from "../Hooks/useApps";
 
 const TrendingApps = () => {
   // const trendingApps = useLoaderData();
-  const {apps,loading,error} = useApps();
+  const {apps} = useApps();
 //  console.log(data)
 
 
-  const featuredProducts = apps.slice(0, 8);
+  const featuredApps = apps.slice(0, 8);
   return (
     <div>
       <div className="text-center py-5">
@@ -25,29 +25,32 @@ const TrendingApps = () => {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-[1100px] sm:mx-auto mx-5">
         {/* card
          */}
-        {featuredProducts.map((trendingApp) => (
-          <div className="card bg-white  shadow-sm hover:scale-105 transition ease-in-out max-h-[px]">
-            <figure className="max-w-full   px-10 py-3 bg-pink-100 min-h-52">
-              <img src={trendingApp.image} alt="Shoes" />
-            </figure>
-            <div className="card-body">
-              <h2 className="font-bold text-[20px] !text-center">
-                {trendingApp.title}
-              </h2>
+      {featuredApps.map((trendingApp) => (
+  <Link to={`/app/${trendingApp.id}`} key={trendingApp.id}>
+    <div className="card bg-white shadow-sm hover:scale-105 transition ease-in-out">
+      <figure className="max-w-full px-10 py-3 bg-pink-100 min-h-52">
+        <img src={trendingApp.image} alt={trendingApp.title} />
+      </figure>
+      <div className="card-body">
+        <h2 className="font-bold text-[20px] text-center">
+          {trendingApp.title}
+        </h2>
 
-              <div className="flex justify-between">
-                <button className="border-gray-300 border px-2 sm:px-4 py-2 flex items-center gap-2 rounded-3xl font-bold bg-green-50 text-green-500">
-                  <img className="w-5" src={downloadImg} alt="" />
-                  {trendingApp.downloads}
-                </button>
-                <button className="border-gray-300 border px-2 sm:px-4 py-2  flex gap-2 items-center rounded-3xl font-bold bg-red-50 text-red-400 ">
-                  <img className="w-5" src={ratingImg} alt="" />
-                  {trendingApp.ratingAvg}
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
+        <div className="flex justify-between">
+          <button className="border-gray-300 border px-2 sm:px-4 py-2 flex items-center gap-2 rounded-3xl font-bold bg-green-50 text-green-500">
+            <img className="w-5" src={downloadImg} alt="" />
+            {trendingApp.downloads}
+          </button>
+          <button className="border-gray-300 border px-2 sm:px-4 py-2 flex gap-2 items-center rounded-3xl font-bold bg-red-50 text-red-400">
+            <img className="w-5" src={ratingImg} alt="" />
+            {trendingApp.ratingAvg}
+          </button>
+        </div>
+      </div>
+    </div>
+  </Link>
+))}
+
       </div>
       <div className="text-center  my-10">
         <NavLink to='/all-apps' className=" px-15 text-[15px] font-bold text-white bg-purple-600 rounded py-4  sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl ">
