@@ -1,31 +1,48 @@
-import React from "react";
-import { NavLink, useLoaderData } from "react-router";
+import React, { useState } from 'react';
+
 import downloadImg from "../assets/images/icon-downloads.png";
 import ratingImg from "../assets/images/icon-ratings.png";
-import useApps from "../Hooks/useApps";
+import useApps from '../Hooks/useApps';
 
-const TrendingApps = () => {
-  // const trendingApps = useLoaderData();
-  const {apps,loading,error} = useApps();
-//  console.log(data)
+const AllApps = () => {
+    
+    const {apps}= useApps();
+    const [search,setSearch] = useState('');
+
+    const term = search.trim().toLocaleLowerCase()
+    const searchedApps= term?apps.filter(app=>app.title.toLocaleLowerCase().includes(term)):apps
+    
+     return (
+<>
 
 
-  const featuredProducts = apps.slice(0, 8);
-  return (
-    <div>
+    <div className='bg-gray-100 pb-5'>
       <div className="text-center py-5">
-        <h1 className="text-3xl font-bold">Trending Apps</h1>
+        <h1 className="text-3xl font-bold">Our All Applications</h1>
         <p className="text-sm py-3 text-gray-600">
-          Explore All Trending Apps on the Market developed by us
+          Explore All Apps on the Market developed by us. We code for Millions
         </p>
       </div>
 
       {/*parent card */}
+      <div className='flex justify-between max-w-[1100px] sm:mx-auto mx-5 my-5'>
+    <h1 className='text-xl font-bold '>Apps Found ({searchedApps.length}) </h1>
+{/* ml-5 sm:ml-21 mb-5 */}
+    <label className="input">
+  
+  <input 
+  value={search}
+  onChange={e=>setSearch(e.target.value)} type="search" placeholder="Search Apps" />
+</label>
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-[1100px] sm:mx-auto mx-5">
+</div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-[1100px] sm:mx-auto mx-5 mb-5">
         {/* card
          */}
-        {featuredProducts.map((trendingApp) => (
+
+         
+        {searchedApps.map((trendingApp) => (
           <div className="card bg-white  shadow-sm hover:scale-105 transition ease-in-out max-h-[px]">
             <figure className="max-w-full   px-10 py-3 bg-pink-100 min-h-52">
               <img src={trendingApp.image} alt="Shoes" />
@@ -40,7 +57,7 @@ const TrendingApps = () => {
                   <img className="w-5" src={downloadImg} alt="" />
                   {trendingApp.downloads}
                 </button>
-                <button className="border-gray-300 border px-2 sm:px-4 py-2  flex gap-2 items-center rounded-3xl font-bold bg-red-50 text-red-400 ">
+                <button className="border-gray-300 border px-2 sm:px-4 py-2  flex gap-2 items-center rounded-3xl font-bold bg-red-50 text-red-400">
                   <img className="w-5" src={ratingImg} alt="" />
                   {trendingApp.ratingAvg}
                 </button>
@@ -49,13 +66,10 @@ const TrendingApps = () => {
           </div>
         ))}
       </div>
-      <div className="text-center  my-10">
-        <NavLink to='/all-apps' className=" px-15 text-[15px] font-bold text-white bg-purple-600 rounded py-4  sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl ">
-          Show All
-        </NavLink>
-      </div>
+    
     </div>
+    </>
   );
 };
 
-export default TrendingApps;
+export default AllApps;

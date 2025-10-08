@@ -7,7 +7,7 @@ import TrendingApps from "../Components/TrendingApps";
 
 const Home = () => {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 pb-5">
       <div className="text-center ">
         <h1 className="text-5xl font-bold pt-10 pb-5">
           We Build <br /> <span className="text-purple-600 ">Productive</span> Apps

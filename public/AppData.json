@@ -1,6 +1,6 @@
 [
   {
-    "image": "https://www.facebook.com/images/fb_icon_325x325.png",
+    "image": "https://img.icons8.com/bubbles/100/facebook-new.png",
     "title": "Facebook",
     "companyName": "Meta Platforms, Inc.",
     "id": 1,
@@ -36,7 +36,7 @@
     ]
   },
   {
-    "image": "https://www.youtube.com/s/desktop/6c829b23/img/favicon_144.png",
+    "image": "https://img.icons8.com/bubbles/100/youtube-squared.png",
     "title": "YouTube",
     "companyName": "Google LLC",
     "id": 3,
@@ -54,7 +54,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/WhatsApp_Logo.svg",
+    "image": "https://img.icons8.com/bubbles/100/whatsapp.png",
     "title": "WhatsApp",
     "companyName": "Meta Platforms, Inc.",
     "id": 4,
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "image": "https://static.tiktokcdn.com/tiktok/logos/TikTok.svg",
+    "image": "https://img.icons8.com/clouds/100/tiktok.png",
     "title": "TikTok",
     "companyName": "ByteDance Ltd.",
     "id": 5,
@@ -90,7 +90,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Snapchat_logo.svg",
+    "image": "https://img.icons8.com/clouds/100/snapchat.png",
     "title": "Snapchat",
     "companyName": "Snap Inc.",
     "id": 6,
@@ -108,7 +108,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg",
+    "image": "https://img.icons8.com/plasticine/100/twitterx.png",
     "title": "X (Twitter)",
     "companyName": "X Corp.",
     "id": 7,
@@ -126,7 +126,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/ce/LinkedIn_logo_initials.png",
+    "image": "https://img.icons8.com/clouds/100/linkedin.png",
     "title": "LinkedIn",
     "companyName": "Microsoft Corporation",
     "id": 8,
@@ -162,7 +162,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Telegram_logo.svg",
+    "image": "https://img.icons8.com/bubbles/100/telegram-app.png",
     "title": "Telegram",
     "companyName": "Telegram FZ-LLC",
     "id": 10,
@@ -252,7 +252,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Zoom_Communications_Logo.svg",
+    "image": "https://img.icons8.com/officel/80/zoom.png",
     "title": "Zoom",
     "companyName": "Zoom Video Communications, Inc.",
     "id": 15,
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Google_Maps_Logo_2020.svg",
+    "image": "https://img.icons8.com/clouds/100/google-maps-new.png",
     "title": "Google Maps",
     "companyName": "Google LLC",
     "id": 17,
@@ -306,7 +306,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/Reddit_logo_new.svg",
+    "image": "https://img.icons8.com/arcade/64/reddit.png",
     "title": "Reddit",
     "companyName": "Reddit Inc.",
     "id": 18,
@@ -324,7 +324,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/9/98/Discord_logo.svg",
+    "image": "https://img.icons8.com/bubbles/100/discord-logo.png",
     "title": "Discord",
     "companyName": "Discord Inc.",
     "id": 19,
@@ -342,7 +342,7 @@
     ]
   },
   {
-    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Spotify_Green_Logo.svg",
+    "image": "https://img.icons8.com/officel/80/spotify.png",
     "title": "Spotify Lite",
     "companyName": "Spotify AB",
     "id": 20,
