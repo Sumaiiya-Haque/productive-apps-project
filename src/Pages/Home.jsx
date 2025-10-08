@@ -3,6 +3,7 @@ import heroPng from '../assets/images/hero.png'
 import googlePlay from '../assets/images/googleplay.png'
 import appStore from '../assets/images/Appstore.png'
 import Trusted from "../Components/Trusted";
+import TrendingApps from "../Components/TrendingApps";
 
 const Home = () => {
   return (
@@ -32,6 +33,9 @@ const Home = () => {
       </div>
        <div>
          <Trusted></Trusted>
+       </div>
+       <div>
+        <TrendingApps></TrendingApps>
        </div>
     </div>
 

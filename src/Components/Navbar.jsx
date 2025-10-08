@@ -1,6 +1,7 @@
 import { Github } from 'lucide-react';
 import React from 'react';
 import { Link, NavLink } from 'react-router';
+import logo from '../assets/images/logo.png'
 
 const Navbar = () => {
     return (
@@ -24,10 +25,13 @@ const Navbar = () => {
       </li>
       </ul>
     </div>
-   
-    <Link to='' className="text-xl">
-     <img src='../assets/images/logo.png' alt="" />
+   <div className='flex'>
+    <img className=' max-w-7' src={logo}alt="" />
+    <Link to='' className="text-2xl font-bold">
+     
     Productive Apps</Link>
+   </div>
+    
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
