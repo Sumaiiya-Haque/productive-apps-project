@@ -9,21 +9,23 @@ import { toast } from "react-toastify";
 
 const DetailDesign = () => {
 
+
+
  
   const [installed, setInstalled] = useState(false)
 
-  const handleInstall = () => {
-    setInstalled(true);
-    toast('✅ App Installed Successfully!');
+  // const handleInstall = () => {
+  //   setInstalled(true);
+  //   toast('✅ App Installed Successfully!');
    
-  };
+  // };
 
     
   const { id } = useParams();
-  const { apps, loading, error } = useApps();
+  const { apps, loading } = useApps();
   const app = apps.find((a) => String(a.id) === id);
 
-  if (loading) {
+    if (loading) {
     return <div className="text-center py-10 text-xl">Loading...</div>;
   }
 
@@ -37,6 +39,24 @@ const DetailDesign = () => {
     downloads,
     companyName,
   } = app;
+
+   const handleInstalled = () =>{
+    const existingList = JSON.parse(localStorage.getItem('installed'))
+    let updatedList = []
+    if(existingList){
+      // const isDuplicate = existingList.some(a=>a.id === app.id)
+      // if(isDuplicate) return alert('kk')
+      updatedList = [...existingList,app]
+    }else{
+      updatedList.push(app)
+    }
+    localStorage.setItem('installed',JSON.stringify(updatedList))
+     setInstalled(true);
+    toast('✅ App Installed Successfully!');
+  }
+
+
+
 
 
  
@@ -77,7 +97,11 @@ const DetailDesign = () => {
           </div>
         </div>
        <button
-      onClick={handleInstall}
+       
+      onClick={() => {
+  // handleInstall();
+  handleInstalled();
+}}
       disabled={installed}
       className={`border px-3 rounded py-1 font-medium transition 
         ${installed ? 'bg-gray-400 px-15 text-white' : 'bg-green-600 text-white hover:bg-green-600 cursor-pointer'}

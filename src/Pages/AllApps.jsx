@@ -58,8 +58,8 @@ const AllApps = () => {
        {searchedApps.map((trendingApp) => (
   <Link to={`/app/${trendingApp.id}`} key={trendingApp.id}>
     <div className="card bg-white shadow-sm hover:scale-105 transition ease-in-out">
-      <figure className="max-w-full px-10 py-3 bg-pink-100 min-h-52">
-        <img src={trendingApp.image} alt={trendingApp.title} />
+      <figure className=" px-10 py-3 bg-pink-100 min-h-52">
+        <img className='' src={trendingApp.image} alt={trendingApp.title} />
       </figure>
       <div className="card-body">
         <h2 className="font-bold text-[20px] text-center">
