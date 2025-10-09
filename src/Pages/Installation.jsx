@@ -14,30 +14,46 @@ const Installation = () => {
     if (savedList) setInstalled(savedList);
   }, []);
 
-const sortedItem = () =>{
-    if(sortOrder === 'size-asc'){
-        return [...installed].sort((a,b)=>a.size - b.size)
-    }else if(sortOrder === 'size-desc'){
-       return [...installed].sort((a,b)=>b.size - a.size) 
-    }else{
-       return installed
-    }
-}
-
-//    const handleInstalled = () =>{
-//     const existingList = JSON.parse(localStorage.getItem('installed'))
-//     let updatedList = []
-//     if(existingList){
-//       // const isDuplicate = existingList.some(a=>a.id === app.id)
-//       // if(isDuplicate) return alert('kk')
-//       updatedList = [...existingList,app]
+// const sortedItem = () =>{
+//     if(sortOrder === 'downloads-asc'){
+//         return [...installed].sort((a,b)=>a.downloads - b.downloads)
+//     }else if(sortOrder === 'downloads-desc'){
+//        return [...installed].sort((a,b)=>b.downloads - a.downloads) 
 //     }else{
-//       updatedList.push(app)
+//        return installed
 //     }
-//     localStorage.setItem('installed',JSON.stringify(updatedList))
-//      setInstalled(true);
-//     toast('✅ App Installed Successfully!');
-//   }
+// }
+
+
+
+const parseDownloads = (value) => {
+  if (typeof value === "string") {
+    if (value.includes("M+")) return parseFloat(value) * 1000000;
+    if (value.includes("K+")) return parseFloat(value) * 1000;
+     if (value.includes("B+")) return parseFloat(value) * 1000000000;
+  }
+  return Number(value);
+};
+
+const sortedItem = () => {
+  if (sortOrder === "downloads-asc") {
+    return [...installed].sort(
+      (a, b) => parseDownloads(a.downloads) - parseDownloads(b.downloads)
+    );
+  } else if (sortOrder === "downloads-desc") {
+    return [...installed].sort(
+      (a, b) => parseDownloads(b.downloads) - parseDownloads(a.downloads)
+    );
+  } else {
+    return installed;
+  }
+};
+
+
+
+
+
+
 
 const handleRemove = id =>{
 const existingList = JSON.parse(localStorage.getItem('installed'))
@@ -72,8 +88,8 @@ setInstalled(updatedList)
       <label className="form-control w-full max-w-xs">
          <select className="select select-bordered" value={sortOrder} onChange={e=>setSortOrder(e.target.value)}>
         <option value='none'>Sort By Size</option>
-        <option value='size-asc'>Low-&gt;High</option>
-        <option value='size-desc'>High-&gt;Low</option>
+        <option value='downloads-asc'>Low-&gt;High</option>
+        <option value='downloads-desc'>High-&gt;Low</option>
        </select>
       </label>
       </div>

@@ -31,7 +31,7 @@ const AppDetails = () => {
         <div>
             <DetailDesign></DetailDesign>
 
-            <Ratings></Ratings>
+            <Ratings ></Ratings>
             <Description></Description>
         </div>
     );
