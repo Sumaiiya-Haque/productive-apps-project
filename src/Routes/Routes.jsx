@@ -42,7 +42,7 @@ const router = createBrowserRouter([
   {
   path: "/app/:id",
   element: <AppDetails />, 
-  loader: ({ params}) => fetch(`/AppData.json`) 
+  // loader: ({ params}) => fetch(`/AppData.json`) 
 }
     ]
   },
