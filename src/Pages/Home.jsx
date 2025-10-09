@@ -5,6 +5,7 @@ import appStore from '../assets/images/Appstore.png'
 import Trusted from "../Components/Trusted";
 import TrendingApps from "../Components/TrendingApps";
 
+
 const Home = () => {
   return (
     <div className="bg-gray-100 pb-5">
@@ -36,6 +37,7 @@ const Home = () => {
        </div>
        <div>
         <TrendingApps></TrendingApps>
+      
        </div>
     </div>
 

@@ -15,6 +15,7 @@ const DetailDesign = () => {
   const handleInstall = () => {
     setInstalled(true);
     toast('✅ App Installed Successfully!');
+   
   };
 
     

@@ -37,12 +37,12 @@ const TrendingApps = () => {
         </h2>
 
         <div className="flex justify-between">
-          <button className="border-gray-300 border px-2 sm:px-4 py-2 flex items-center gap-2 rounded-3xl font-bold bg-green-50 text-green-500">
-            <img className="w-5" src={downloadImg} alt="" />
+          <button className="border-gray-300 border px-1 sm:px-4 py-1 flex items-center gap-2 rounded-xl font-bold bg-green-50 text-green-500">
+            <img className="w-4" src={downloadImg} alt="" />
             {trendingApp.downloads}
           </button>
-          <button className="border-gray-300 border px-2 sm:px-4 py-2 flex gap-2 items-center rounded-3xl font-bold bg-red-50 text-red-400">
-            <img className="w-5" src={ratingImg} alt="" />
+          <button className="border-gray-300 border px-1 sm:px-4 py-1 flex gap-2 items-center rounded-xl font-bold bg-red-50 text-red-400">
+            <img className="w-4" src={ratingImg} alt="" />
             {trendingApp.ratingAvg}
           </button>
         </div>

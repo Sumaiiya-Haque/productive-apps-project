@@ -28,7 +28,7 @@ const Ratings = () => {
     return (
         <div>
            <div>
-            <h1 className='text-xl font-bold'>Ratings</h1>
+            <h1 className='text-2xl font-bold'>Ratings</h1>
 
 
             </div> 

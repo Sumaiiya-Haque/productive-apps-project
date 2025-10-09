@@ -8,6 +8,8 @@ import AllApps from "../Pages/AllApps";
 import AppsNotFound from "../Pages/AppsNotFound";
 
 import AppDetails from "../Pages/AppDetails";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const router = createBrowserRouter([
@@ -32,7 +34,8 @@ const router = createBrowserRouter([
     {
     path:'/all-apps',
     element:<AllApps></AllApps>,
-    loader: ()=> fetch('./AppData.json'),
+    // errorElement:<AppsNotFound></AppsNotFound>
+ 
   },
   {
     path:'/apps-not-found',
@@ -42,16 +45,21 @@ const router = createBrowserRouter([
   {
   path: "/app/:id",
   element: <AppDetails />, 
-  // loader: ({ params}) => fetch(`/AppData.json`) 
-}
+  // errorElement:<AppsNotFound></AppsNotFound>
+  
+},
+//  {
+//     path:'/error',
+//     element:<ErrorPage></ErrorPage>
+     
+//   },
     ]
   },
-// {
-//   path:'*',
-//   element:<ErrorPage></ErrorPage>
-// }
 
+<ToastContainer></ToastContainer>
 
-])
+]
+)
+
 
 export default router;
