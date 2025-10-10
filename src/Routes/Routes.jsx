@@ -9,59 +9,45 @@ import AppsNotFound from "../Pages/AppsNotFound";
 
 import AppDetails from "../Pages/AppDetails";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import LoadingSpinner from "../Components/LoadingSpinner";
 
-
 const router = createBrowserRouter([
-    {
-    path:'/',
-    element:<MainLayout></MainLayout>,
-    hydrateFallbackElement:<LoadingSpinner></LoadingSpinner>,
-    errorElement:<ErrorPage></ErrorPage>,
+  {
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
-  {
-    path:'/',
-    element:<Home></Home>,
-    loader: ()=> fetch('./AppData.json'),
-  },
-  //    {
-  //   path:'/apps',
-  //   element:<Apps></Apps>
-  // },
-    {
-    path:'/installation',
-    element:<Installation></Installation>
-  },
-    {
-    path:'/all-apps',
-    element:<AllApps></AllApps>,
-    // errorElement:<AppsNotFound></AppsNotFound>
- 
-  },
-  {
-    path:'/apps-not-found',
-    element:<AppsNotFound></AppsNotFound>,
-     
-  },
-  {
-  path: "/app/:id",
-  element: <AppDetails />, 
-  // errorElement:<AppsNotFound></AppsNotFound>
-  
-},
-//  {
-//     path:'/error',
-//     element:<ErrorPage></ErrorPage>
-     
-//   },
-    ]
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch("./AppData.json"),
+      },
+      //    {
+      //   path:'/apps',
+      //   element:<Apps></Apps>
+      // },
+      {
+        path: "/installation",
+        element: <Installation></Installation>,
+      },
+      {
+        path: "/all-apps",
+        element: <AllApps></AllApps>,
+      },
+      {
+        path: "/apps-not-found",
+        element: <AppsNotFound></AppsNotFound>,
+      },
+      {
+        path: "/app/:id",
+        element: <AppDetails />,
+      },
+    ],
   },
 
-<ToastContainer></ToastContainer>
-
-]
-)
-
+  <ToastContainer></ToastContainer>,
+]);
 
 export default router;
