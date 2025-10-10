@@ -6,18 +6,20 @@ import { ToastContainer } from "react-toastify";
 import LoadingSpinner from "../Components/LoadingSpinner";
 
 const MainLayout = () => {
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
   // console.log(navigation.state)
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar></Navbar>
-     {
+     {/* {
       navigation?.state === 'loading' ? (<LoadingSpinner></LoadingSpinner>):(
-         <div className="w-full  flex-1">
+        
+      )
+
+     } */}
+      <div className="w-full  flex-1">
         <Outlet></Outlet>
       </div>
-      )
-     }
       <Footer></Footer>
        <ToastContainer></ToastContainer>
     </div>

@@ -10,7 +10,7 @@ import { PacmanLoader } from 'react-spinners';
 
 const AppDetails = () => {
     // const {id} = useParams()
-    const {apps,loading,error} = useApps();
+    const {loading} = useApps();
     // const app = apps.find(a=>String(a.id) === id);
 
       if (loading) {

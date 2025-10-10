@@ -13,15 +13,7 @@ const Installation = () => {
     if (savedList) setInstalled(savedList);
   }, []);
 
-  // const sortedItem = () =>{
-  //     if(sortOrder === 'downloads-asc'){
-  //         return [...installed].sort((a,b)=>a.downloads - b.downloads)
-  //     }else if(sortOrder === 'downloads-desc'){
-  //        return [...installed].sort((a,b)=>b.downloads - a.downloads)
-  //     }else{
-  //        return installed
-  //     }
-  // }
+
 
   const parseDownloads = (value) => {
     if (typeof value === "string") {
@@ -72,7 +64,7 @@ const Installation = () => {
           Apps Found ({installed.length}){" "}
         </h1>
 
-        {/* <button className="btn btn-soft">Sort By Size</button> */}
+        
 
         <label className="form-control w-full max-w-xs">
           <select
@@ -80,7 +72,7 @@ const Installation = () => {
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
           >
-            <option value="none">Sort By Size</option>
+            <option value="none">Sort By: Size</option>
             <option value="downloads-asc">Low-&gt;High</option>
             <option value="downloads-desc">High-&gt;Low</option>
           </select>
@@ -133,8 +125,4 @@ const Installation = () => {
 
 export default Installation;
 
-{
-  /* <div>
-                <button className="font-medium border px-5 rounded-xl bg-purple-600 text-white py-1">Uninstall</button>
-            </div> */
-}
+
