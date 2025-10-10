@@ -41,7 +41,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex">
-          <img className=" max-w-7" src={logo} alt="" />
+          <Link to="/">
+  <img className="max-w-7" src={logo} alt="Logo" />
+</Link>
           <Link to="" className="text-2xl font-bold text-purple-600">
             HERO.IO
           </Link>

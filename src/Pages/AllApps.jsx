@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import downloadImg from "../assets/images/icon-downloads.png";
 import ratingImg from "../assets/images/icon-ratings.png";
-import useApps from '../Hooks/useApps';
-import { SearchIcon } from 'lucide-react';
-import AppsNotFound from './AppsNotFound';
-import { Link } from 'react-router';
+import useApps from "../Hooks/useApps";
+import { SearchIcon } from "lucide-react";
+import AppsNotFound from "./AppsNotFound";
+import { Link } from "react-router";
 
 const AllApps = () => {
   const { apps } = useApps();
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false); // ✅ for spinner
 
   // ✅ Handle search input
@@ -25,12 +25,12 @@ const AllApps = () => {
 
   const term = search.trim().toLocaleLowerCase();
   const searchedApps = term
-    ? apps.filter(app => app.title.toLocaleLowerCase().includes(term))
+    ? apps.filter((app) => app.title.toLocaleLowerCase().includes(term))
     : apps;
 
   return (
     <>
-      <div className='bg-gray-100 pb-5'>
+      <div className="bg-gray-100 pb-5">
         <div className="text-center py-5">
           <h1 className="text-3xl font-bold">Our All Applications</h1>
           <p className="text-sm py-3 text-gray-600">
@@ -39,11 +39,13 @@ const AllApps = () => {
         </div>
 
         {/* parent card */}
-        <div className='flex justify-between max-w-[1100px] sm:mx-auto mx-5 my-5'>
-          <h1 className='text-xl font-bold '>Apps Found ({searchedApps.length}) </h1>
+        <div className="flex justify-between max-w-[1100px] sm:mx-auto mx-5 my-5">
+          <h1 className="text-xl font-bold ">
+            Apps Found ({searchedApps.length}){" "}
+          </h1>
 
           <label className="input">
-            <SearchIcon className='text-gray-400'></SearchIcon>
+            <SearchIcon className="text-gray-400"></SearchIcon>
             <input
               value={search}
               onChange={handleSearchChange} // ✅ loading trigger
@@ -59,10 +61,8 @@ const AllApps = () => {
             <span className="loading loading-spinner loading-lg text-blue-500"></span>
           </div>
         ) : searchedApps.length === 0 ? (
-          // ✅ যদি কোনো অ্যাপ না মেলে
           <AppsNotFound />
         ) : (
-          // ✅ অ্যাপ লিস্ট
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-[1100px] sm:mx-auto mx-5 mb-5">
             {searchedApps.map((trendingApp) => (
               <Link to={`/app/${trendingApp.id}`} key={trendingApp.id}>
@@ -101,6 +101,3 @@ const AllApps = () => {
 };
 
 export default AllApps;
-
-
-
