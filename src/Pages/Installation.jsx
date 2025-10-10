@@ -13,8 +13,6 @@ const Installation = () => {
     if (savedList) setInstalled(savedList);
   }, []);
 
-
-
   const parseDownloads = (value) => {
     if (typeof value === "string") {
       if (value.includes("M+")) return parseFloat(value) * 1000000;
@@ -64,15 +62,13 @@ const Installation = () => {
           Apps Found ({installed.length}){" "}
         </h1>
 
-        
-
         <label className="form-control w-full max-w-xs">
           <select
             className="select select-bordered"
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
           >
-            <option value="none">Sort By: Size</option>
+            <option value="none">Sort By Downloads</option>
             <option value="downloads-asc">Low-&gt;High</option>
             <option value="downloads-desc">High-&gt;Low</option>
           </select>
@@ -124,5 +120,3 @@ const Installation = () => {
 };
 
 export default Installation;
-
-
