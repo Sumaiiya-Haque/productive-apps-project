@@ -47,19 +47,48 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/all-apps">Apps</NavLink>
-          </li>
-          <li>
-            <NavLink to="/installation">Installation</NavLink>
-          </li>
-        </ul>
-      </div>
+     <div className="navbar-center hidden lg:flex">
+      <ul className="menu menu-horizontal px-1">
+        <li>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-600 font-semibold border-b-2 border-blue-600"
+                : "text-gray-600 hover:text-blue-600"
+            }
+          >
+            Home
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/all-apps"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-600 font-semibold border-b-2 border-blue-600"
+                : "text-gray-600 hover:text-blue-600"
+            }
+          >
+            Apps
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/installation"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-600 font-semibold border-b-2 border-blue-600"
+                : "text-gray-600 hover:text-blue-600"
+            }
+          >
+            Installation
+          </NavLink>
+        </li>
+      </ul>
+    </div>
       <div className="navbar-end mr-0 sm:mr-10">
         <a
           href="https://github.com/Sumaiiya-Haque"
