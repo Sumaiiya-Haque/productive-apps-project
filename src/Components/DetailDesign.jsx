@@ -61,7 +61,7 @@ const DetailDesign = () => {
 
  
   return (
-    <div className="flex my-5 gap-4 max-w-[1100px] mx-auto">
+    <div className="flex my-5 gap-4 max-w-[1100px] sm:mx-auto mx-5">
       <div>
         <img
           className=" p-10 border-amber-100 border-2 rounded"
