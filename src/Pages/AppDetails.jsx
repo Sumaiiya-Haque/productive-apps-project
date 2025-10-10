@@ -1,5 +1,4 @@
-import React from 'react';
-import { useParams } from 'react-router';
+
 import useApps from '../Hooks/useApps';
 import DetailDesign from '../Components/DetailDesign';
 import Ratings from '../Components/Ratings';

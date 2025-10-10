@@ -1,16 +1,30 @@
-# React + Vite
+HERO.IO – Productive App Showcase
+🚀 Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HERO.IO is a modern React-based web application that showcases our productive and popular mobile apps.
+Users can explore Trending Apps, view detailed App Information, and access installation guides, all in one place.
 
-Currently, two official plugins are available:
+🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔥 Trending Apps Section: Displays a smooth loading spinner while the trending apps data is being fetched.
 
-## React Compiler
+📱 App Details Page: Shows detailed information, download count, and average ratings for each app.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+💾 Installation Page: Manage installed apps efficiently.
 
-## Expanding the ESLint configuration
+🔍 Search & Filter: Search apps by name or category.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+💜 Responsive UI: Fully responsive design built with Tailwind CSS.
+
+⚡ Smooth Loading Experience: Provides a pleasant user experience with loading animations.
+
+🧭 Routing System: Navigation across pages powered by React Router.
+
+🛠️ Tech Stack
+Category	Tools / Libraries
+Frontend	React.js, Vite
+UI Framework	Tailwind CSS, DaisyUI
+Routing	React Router
+Notifications	React Toastify
+Charts	Recharts (optional)
+Icons	Lucide React
