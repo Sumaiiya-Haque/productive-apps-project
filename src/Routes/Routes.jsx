@@ -10,12 +10,14 @@ import AppsNotFound from "../Pages/AppsNotFound";
 import AppDetails from "../Pages/AppDetails";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import LoadingSpinner from "../Components/LoadingSpinner";
 
 
 const router = createBrowserRouter([
     {
     path:'/',
     element:<MainLayout></MainLayout>,
+    hydrateFallbackElement:<LoadingSpinner></LoadingSpinner>,
     errorElement:<ErrorPage></ErrorPage>,
     children: [
   {
@@ -23,10 +25,10 @@ const router = createBrowserRouter([
     element:<Home></Home>,
     loader: ()=> fetch('./AppData.json'),
   },
-     {
-    path:'/apps',
-    element:<Apps></Apps>
-  },
+  //    {
+  //   path:'/apps',
+  //   element:<Apps></Apps>
+  // },
     {
     path:'/installation',
     element:<Installation></Installation>

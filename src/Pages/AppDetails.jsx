@@ -4,6 +4,7 @@ import useApps from '../Hooks/useApps';
 import DetailDesign from '../Components/DetailDesign';
 import Ratings from '../Components/Ratings';
 import Description from '../Components/Description';
+import { PacmanLoader } from 'react-spinners';
 
 
 
@@ -13,20 +14,14 @@ const AppDetails = () => {
     // const app = apps.find(a=>String(a.id) === id);
 
       if (loading) {
-    return <div className="text-center py-10 text-xl">Loading...</div>;
+    return <div className='flex justify-center items-center mt-100px'>
+            <PacmanLoader />
+        </div>
   }
 
 
 
-// const navigate = useNavigate();
 
-// if (!app) {
-//   navigate("/error");
-//   return null;
-// }
-
-    
-    // const {image,ratingAvg,ratings,reviews,size,title,downloads,companyName} = app
     return (
         <div>
             <DetailDesign></DetailDesign>

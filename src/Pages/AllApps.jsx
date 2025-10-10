@@ -6,7 +6,7 @@ import useApps from '../Hooks/useApps';
 import { SearchIcon } from 'lucide-react';
 
 import AppsNotFound from './AppsNotFound';
-import { Link, NavLink, useNavigate } from 'react-router';
+import { Link, } from 'react-router';
 
 const AllApps = () => {
 
@@ -20,11 +20,11 @@ const AllApps = () => {
     const searchedApps= term?apps.filter(app=>app.title.toLocaleLowerCase().includes(term)):apps
 
 
-      const navigate = useNavigate();
+  //     const navigate = useNavigate();
 
-  if (searchedApps.length === 0) {
-    navigate("/apps-not-found");
-  }
+  // if (searchedApps.length === 0) {
+  //   navigate("/apps-not-found");
+  // }
     
      return (
 <>

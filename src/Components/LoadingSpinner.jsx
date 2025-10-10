@@ -1,9 +1,10 @@
 import React from 'react';
+import { PacmanLoader } from 'react-spinners';
 
 const LoadingSpinner = () => {
     return (
-        <div>
-            <h1>Loading spinner</h1>
+        <div className='flex justify-center items-center h-full my-50'>
+            <PacmanLoader />
         </div>
     );
 };
